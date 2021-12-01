@@ -1,0 +1,16 @@
+C:\Users\luism\RiderProjects\Banco\Data\bin\Debug\Data.dll.config
+C:\Users\luism\RiderProjects\Banco\Data\bin\Debug\Data.dll
+C:\Users\luism\RiderProjects\Banco\Data\bin\Debug\Data.pdb
+C:\Users\luism\RiderProjects\Banco\Data\bin\Debug\Entidad.dll
+C:\Users\luism\RiderProjects\Banco\Data\bin\Debug\EntityFramework.dll
+C:\Users\luism\RiderProjects\Banco\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\luism\RiderProjects\Banco\Data\bin\Debug\Entidad.pdb
+C:\Users\luism\RiderProjects\Banco\Data\bin\Debug\EntityFramework.xml
+C:\Users\luism\RiderProjects\Banco\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\luism\RiderProjects\Banco\Data\obj\Debug\Data.csproj.AssemblyReference.cache
+C:\Users\luism\RiderProjects\Banco\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\luism\RiderProjects\Banco\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\luism\RiderProjects\Banco\Data\obj\Debug\Data.dll
+C:\Users\luism\RiderProjects\Banco\Data\obj\Debug\Data.pdb
+C:\Users\luism\RiderProjects\Banco\Data\bin\Debug\UmbCodeGen.dll
+C:\Users\luism\RiderProjects\Banco\Data\bin\Debug\Entidad.dll.config

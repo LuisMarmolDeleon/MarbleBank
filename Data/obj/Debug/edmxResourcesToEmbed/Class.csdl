@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BancoAPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="administrador">
+    <Key>
+      <PropertyRef Name="Id_admin" />
+    </Key>
+    <Property Name="Id_admin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="cedula" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_Nacimiento" Type="DateTime" Precision="0" />
+    <Property Name="usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="clave" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Codigo_confirmacion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Confirmado" Type="Byte" />
+  </EntityType>
+  <EntityType Name="credito">
+    <Key>
+      <PropertyRef Name="Id_tarjeta" />
+    </Key>
+    <Property Name="Id_tarjeta" Type="Int32" Nullable="false" />
+    <Property Name="Numero_tarjeta" Type="Int32" />
+    <Property Name="Fecha_vencimiento" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="cvc" Type="Int32" />
+    <Property Name="saldo" Type="Int32" />
+    <Property Name="deuda" Type="Int32" />
+  </EntityType>
+  <EntityType Name="cuenta">
+    <Key>
+      <PropertyRef Name="Numero_cuenta" />
+    </Key>
+    <Property Name="Numero_cuenta" Type="Int32" Nullable="false" />
+    <Property Name="Saldo_disp" Type="Int32" />
+  </EntityType>
+  <EntityType Name="prestamo">
+    <Key>
+      <PropertyRef Name="Id_prestamo" />
+    </Key>
+    <Property Name="Id_prestamo" Type="Int32" Nullable="false" />
+    <Property Name="Saldo_prestado" Type="Int32" />
+    <Property Name="Saldo_pagado" Type="Int32" />
+    <Property Name="cuotas" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tarjeta">
+    <Key>
+      <PropertyRef Name="Id_tarjeta" />
+    </Key>
+    <Property Name="Id_tarjeta" Type="Int32" Nullable="false" />
+    <Property Name="Id_cuenta" Type="Int32" />
+    <Property Name="Numero_tarjeta" Type="Int32" />
+    <Property Name="Fecha_vencimiento" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="cvc" Type="Int32" />
+    <Property Name="saldo_maximo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Cedula" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_Nacimiento" Type="DateTime" Precision="0" />
+    <Property Name="Id_cuenta" Type="Int32" />
+    <Property Name="Id_tarjeta" Type="Int32" />
+    <Property Name="Id_credito" Type="Int32" />
+    <Property Name="Id_prestamo" Type="Int32" />
+    <Property Name="usuario1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="clave" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Codigo_Confirmacion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Confirmado" Type="Byte" />
+  </EntityType>
+  <EntityContainer Name="BancoAPIEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="administradors" EntityType="Self.administrador" />
+    <EntitySet Name="creditoes" EntityType="Self.credito" />
+    <EntitySet Name="cuentas" EntityType="Self.cuenta" />
+    <EntitySet Name="prestamoes" EntityType="Self.prestamo" />
+    <EntitySet Name="tarjetas" EntityType="Self.tarjeta" />
+    <EntitySet Name="usuarios" EntityType="Self.usuario" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,77 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Usuarios/1.0.0": {
+        "dependencies": {
+          "Entidad": "1.0.0",
+          "Negocio": "1.0.0"
+        },
+        "runtime": {
+          "Usuarios.dll": {}
+        }
+      },
+      "Data/1.0.0": {
+        "dependencies": {
+          "Entidad": "1.0.0"
+        },
+        "runtime": {
+          "Data.dll": {}
+        }
+      },
+      "Entidad/1.0.0": {
+        "runtime": {
+          "Entidad.dll": {}
+        }
+      },
+      "Negocio/1.0.0": {
+        "dependencies": {
+          "Data": "1.0.0",
+          "Entidad": "1.0.0"
+        },
+        "runtime": {
+          "Negocio.dll": {}
+        }
+      },
+      "EntityFramework/6.0.0.0": {
+        "runtime": {
+          "EntityFramework.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.400.420.21404"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Usuarios/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Entidad/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Negocio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EntityFramework/6.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BancoAPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="administrador">
+    <Key>
+      <PropertyRef Name="Id_admin" />
+    </Key>
+    <Property Name="Id_admin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="40" />
+    <Property Name="Apellido" Type="varchar" MaxLength="40" />
+    <Property Name="cedula" Type="varchar" MaxLength="13" />
+    <Property Name="Fecha_Nacimiento" Type="date" />
+    <Property Name="usuario" Type="varchar" MaxLength="10" />
+    <Property Name="clave" Type="varchar" MaxLength="30" />
+    <Property Name="Codigo_confirmacion" Type="varchar" MaxLength="8" />
+    <Property Name="Confirmado" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="credito">
+    <Key>
+      <PropertyRef Name="Id_tarjeta" />
+    </Key>
+    <Property Name="Id_tarjeta" Type="int" Nullable="false" />
+    <Property Name="Numero_tarjeta" Type="int" />
+    <Property Name="Fecha_vencimiento" Type="varchar" MaxLength="5" />
+    <Property Name="cvc" Type="int" />
+    <Property Name="saldo" Type="int" />
+    <Property Name="deuda" Type="int" />
+  </EntityType>
+  <EntityType Name="cuentas">
+    <Key>
+      <PropertyRef Name="Numero_cuenta" />
+    </Key>
+    <Property Name="Numero_cuenta" Type="int" Nullable="false" />
+    <Property Name="Saldo_disp" Type="int" />
+  </EntityType>
+  <EntityType Name="prestamo">
+    <Key>
+      <PropertyRef Name="Id_prestamo" />
+    </Key>
+    <Property Name="Id_prestamo" Type="int" Nullable="false" />
+    <Property Name="Saldo_prestado" Type="int" />
+    <Property Name="Saldo_pagado" Type="int" />
+    <Property Name="cuotas" Type="int" />
+  </EntityType>
+  <EntityType Name="tarjeta">
+    <Key>
+      <PropertyRef Name="Id_tarjeta" />
+    </Key>
+    <Property Name="Id_tarjeta" Type="int" Nullable="false" />
+    <Property Name="Id_cuenta" Type="int" />
+    <Property Name="Numero_tarjeta" Type="int" />
+    <Property Name="Fecha_vencimiento" Type="varchar" MaxLength="5" />
+    <Property Name="cvc" Type="int" />
+    <Property Name="saldo_maximo" Type="int" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="40" />
+    <Property Name="Apellido" Type="varchar" MaxLength="40" />
+    <Property Name="Cedula" Type="varchar" MaxLength="3" />
+    <Property Name="Fecha_Nacimiento" Type="date" />
+    <Property Name="Id_cuenta" Type="int" />
+    <Property Name="Id_tarjeta" Type="int" />
+    <Property Name="Id_credito" Type="int" />
+    <Property Name="Id_prestamo" Type="int" />
+    <Property Name="usuario" Type="varchar" MaxLength="10" />
+    <Property Name="clave" Type="varchar" MaxLength="30" />
+    <Property Name="Correo" Type="varchar" MaxLength="30" />
+    <Property Name="Codigo_Confirmacion" Type="varchar" MaxLength="8" />
+    <Property Name="Confirmado" Type="tinyint" />
+  </EntityType>
+  <EntityContainer Name="BancoAPIModelStoreContainer">
+    <EntitySet Name="administrador" EntityType="Self.administrador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="credito" EntityType="Self.credito" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cuentas" EntityType="Self.cuentas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prestamo" EntityType="Self.prestamo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tarjeta" EntityType="Self.tarjeta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

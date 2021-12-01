@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BancoAPIModelStoreContainer" CdmEntityContainer="BancoAPIEntities">
+    <EntitySetMapping Name="administradors">
+      <EntityTypeMapping TypeName="BancoAPIModel.administrador">
+        <MappingFragment StoreEntitySet="administrador">
+          <ScalarProperty Name="Id_admin" ColumnName="Id_admin" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="Codigo_confirmacion" ColumnName="Codigo_confirmacion" />
+          <ScalarProperty Name="Confirmado" ColumnName="Confirmado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="creditoes">
+      <EntityTypeMapping TypeName="BancoAPIModel.credito">
+        <MappingFragment StoreEntitySet="credito">
+          <ScalarProperty Name="Id_tarjeta" ColumnName="Id_tarjeta" />
+          <ScalarProperty Name="Numero_tarjeta" ColumnName="Numero_tarjeta" />
+          <ScalarProperty Name="Fecha_vencimiento" ColumnName="Fecha_vencimiento" />
+          <ScalarProperty Name="cvc" ColumnName="cvc" />
+          <ScalarProperty Name="saldo" ColumnName="saldo" />
+          <ScalarProperty Name="deuda" ColumnName="deuda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cuentas">
+      <EntityTypeMapping TypeName="BancoAPIModel.cuenta">
+        <MappingFragment StoreEntitySet="cuentas">
+          <ScalarProperty Name="Numero_cuenta" ColumnName="Numero_cuenta" />
+          <ScalarProperty Name="Saldo_disp" ColumnName="Saldo_disp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prestamoes">
+      <EntityTypeMapping TypeName="BancoAPIModel.prestamo">
+        <MappingFragment StoreEntitySet="prestamo">
+          <ScalarProperty Name="Id_prestamo" ColumnName="Id_prestamo" />
+          <ScalarProperty Name="Saldo_prestado" ColumnName="Saldo_prestado" />
+          <ScalarProperty Name="Saldo_pagado" ColumnName="Saldo_pagado" />
+          <ScalarProperty Name="cuotas" ColumnName="cuotas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tarjetas">
+      <EntityTypeMapping TypeName="BancoAPIModel.tarjeta">
+        <MappingFragment StoreEntitySet="tarjeta">
+          <ScalarProperty Name="Id_tarjeta" ColumnName="Id_tarjeta" />
+          <ScalarProperty Name="Id_cuenta" ColumnName="Id_cuenta" />
+          <ScalarProperty Name="Numero_tarjeta" ColumnName="Numero_tarjeta" />
+          <ScalarProperty Name="Fecha_vencimiento" ColumnName="Fecha_vencimiento" />
+          <ScalarProperty Name="cvc" ColumnName="cvc" />
+          <ScalarProperty Name="saldo_maximo" ColumnName="saldo_maximo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="BancoAPIModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Id_cuenta" ColumnName="Id_cuenta" />
+          <ScalarProperty Name="Id_tarjeta" ColumnName="Id_tarjeta" />
+          <ScalarProperty Name="Id_credito" ColumnName="Id_credito" />
+          <ScalarProperty Name="Id_prestamo" ColumnName="Id_prestamo" />
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Codigo_Confirmacion" ColumnName="Codigo_Confirmacion" />
+          <ScalarProperty Name="Confirmado" ColumnName="Confirmado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

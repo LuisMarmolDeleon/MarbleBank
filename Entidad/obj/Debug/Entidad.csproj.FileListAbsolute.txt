@@ -1,0 +1,12 @@
+C:\Users\luism\RiderProjects\Banco\Entidad\bin\Debug\Entidad.dll
+C:\Users\luism\RiderProjects\Banco\Entidad\bin\Debug\Entidad.pdb
+C:\Users\luism\RiderProjects\Banco\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
+C:\Users\luism\RiderProjects\Banco\Entidad\obj\Debug\Entidad.dll
+C:\Users\luism\RiderProjects\Banco\Entidad\obj\Debug\Entidad.pdb
+C:\Users\luism\RiderProjects\Banco\Entidad\bin\Debug\Entidad.dll.config
+C:\Users\luism\RiderProjects\Banco\Entidad\bin\Debug\EntityFramework.dll
+C:\Users\luism\RiderProjects\Banco\Entidad\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\luism\RiderProjects\Banco\Entidad\bin\Debug\EntityFramework.xml
+C:\Users\luism\RiderProjects\Banco\Entidad\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\luism\RiderProjects\Banco\Entidad\obj\Debug\Entidad.csproj.CopyComplete
+C:\Users\luism\RiderProjects\Banco\Entidad\obj\Debug\Entidad.csproj.AssemblyReference.cache

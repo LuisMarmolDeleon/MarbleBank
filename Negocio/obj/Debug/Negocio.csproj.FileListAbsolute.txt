@@ -1,0 +1,15 @@
+C:\Users\luism\RiderProjects\Banco\Negocio\bin\Debug\Negocio.dll
+C:\Users\luism\RiderProjects\Banco\Negocio\bin\Debug\Negocio.pdb
+C:\Users\luism\RiderProjects\Banco\Negocio\bin\Debug\Data.dll
+C:\Users\luism\RiderProjects\Banco\Negocio\bin\Debug\Entidad.dll
+C:\Users\luism\RiderProjects\Banco\Negocio\bin\Debug\Data.pdb
+C:\Users\luism\RiderProjects\Banco\Negocio\bin\Debug\Data.dll.config
+C:\Users\luism\RiderProjects\Banco\Negocio\bin\Debug\Entidad.pdb
+C:\Users\luism\RiderProjects\Banco\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\luism\RiderProjects\Banco\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\luism\RiderProjects\Banco\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\luism\RiderProjects\Banco\Negocio\obj\Debug\Negocio.dll
+C:\Users\luism\RiderProjects\Banco\Negocio\obj\Debug\Negocio.pdb
+C:\Users\luism\RiderProjects\Banco\Negocio\bin\Debug\EntityFramework.dll
+C:\Users\luism\RiderProjects\Banco\Negocio\bin\Debug\EntityFramework.xml
+C:\Users\luism\RiderProjects\Banco\Negocio\bin\Debug\Entidad.dll.config

@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BancoAPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="administrador">
+          <Key>
+            <PropertyRef Name="Id_admin" />
+          </Key>
+          <Property Name="Id_admin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombres" Type="varchar" MaxLength="40" />
+          <Property Name="Apellido" Type="varchar" MaxLength="40" />
+          <Property Name="cedula" Type="varchar" MaxLength="13" />
+          <Property Name="Fecha_Nacimiento" Type="date" />
+          <Property Name="usuario" Type="varchar" MaxLength="10" />
+          <Property Name="clave" Type="varchar" MaxLength="30" />
+          <Property Name="Codigo_confirmacion" Type="varchar" MaxLength="8" />
+          <Property Name="Confirmado" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="credito">
+          <Key>
+            <PropertyRef Name="Id_tarjeta" />
+          </Key>
+          <Property Name="Id_tarjeta" Type="int" Nullable="false" />
+          <Property Name="Numero_tarjeta" Type="int" />
+          <Property Name="Fecha_vencimiento" Type="varchar" MaxLength="5" />
+          <Property Name="cvc" Type="int" />
+          <Property Name="saldo" Type="int" />
+          <Property Name="deuda" Type="int" />
+        </EntityType>
+        <EntityType Name="cuentas">
+          <Key>
+            <PropertyRef Name="Numero_cuenta" />
+          </Key>
+          <Property Name="Numero_cuenta" Type="int" Nullable="false" />
+          <Property Name="Saldo_disp" Type="int" />
+        </EntityType>
+        <EntityType Name="prestamo">
+          <Key>
+            <PropertyRef Name="Id_prestamo" />
+          </Key>
+          <Property Name="Id_prestamo" Type="int" Nullable="false" />
+          <Property Name="Saldo_prestado" Type="int" />
+          <Property Name="Saldo_pagado" Type="int" />
+          <Property Name="cuotas" Type="int" />
+        </EntityType>
+        <EntityType Name="tarjeta">
+          <Key>
+            <PropertyRef Name="Id_tarjeta" />
+          </Key>
+          <Property Name="Id_tarjeta" Type="int" Nullable="false" />
+          <Property Name="Id_cuenta" Type="int" />
+          <Property Name="Numero_tarjeta" Type="int" />
+          <Property Name="Fecha_vencimiento" Type="varchar" MaxLength="5" />
+          <Property Name="cvc" Type="int" />
+          <Property Name="saldo_maximo" Type="int" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="Id_Usuario" />
+          </Key>
+          <Property Name="Id_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombres" Type="varchar" MaxLength="40" />
+          <Property Name="Apellido" Type="varchar" MaxLength="40" />
+          <Property Name="Cedula" Type="varchar" MaxLength="3" />
+          <Property Name="Fecha_Nacimiento" Type="date" />
+          <Property Name="Id_cuenta" Type="int" />
+          <Property Name="Id_tarjeta" Type="int" />
+          <Property Name="Id_credito" Type="int" />
+          <Property Name="Id_prestamo" Type="int" />
+          <Property Name="usuario" Type="varchar" MaxLength="10" />
+          <Property Name="clave" Type="varchar" MaxLength="30" />
+          <Property Name="Correo" Type="varchar" MaxLength="30" />
+          <Property Name="Codigo_Confirmacion" Type="varchar" MaxLength="8" />
+          <Property Name="Confirmado" Type="tinyint" />
+        </EntityType>
+        <EntityContainer Name="BancoAPIModelStoreContainer">
+          <EntitySet Name="administrador" EntityType="Self.administrador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="credito" EntityType="Self.credito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cuentas" EntityType="Self.cuentas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="prestamo" EntityType="Self.prestamo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tarjeta" EntityType="Self.tarjeta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BancoAPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="administrador">
+          <Key>
+            <PropertyRef Name="Id_admin" />
+          </Key>
+          <Property Name="Id_admin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombres" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="cedula" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Nacimiento" Type="DateTime" Precision="0" />
+          <Property Name="usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="clave" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Codigo_confirmacion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Confirmado" Type="Byte" />
+        </EntityType>
+        <EntityType Name="credito">
+          <Key>
+            <PropertyRef Name="Id_tarjeta" />
+          </Key>
+          <Property Name="Id_tarjeta" Type="Int32" Nullable="false" />
+          <Property Name="Numero_tarjeta" Type="Int32" />
+          <Property Name="Fecha_vencimiento" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="cvc" Type="Int32" />
+          <Property Name="saldo" Type="Int32" />
+          <Property Name="deuda" Type="Int32" />
+        </EntityType>
+        <EntityType Name="cuenta">
+          <Key>
+            <PropertyRef Name="Numero_cuenta" />
+          </Key>
+          <Property Name="Numero_cuenta" Type="Int32" Nullable="false" />
+          <Property Name="Saldo_disp" Type="Int32" />
+        </EntityType>
+        <EntityType Name="prestamo">
+          <Key>
+            <PropertyRef Name="Id_prestamo" />
+          </Key>
+          <Property Name="Id_prestamo" Type="Int32" Nullable="false" />
+          <Property Name="Saldo_prestado" Type="Int32" />
+          <Property Name="Saldo_pagado" Type="Int32" />
+          <Property Name="cuotas" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tarjeta">
+          <Key>
+            <PropertyRef Name="Id_tarjeta" />
+          </Key>
+          <Property Name="Id_tarjeta" Type="Int32" Nullable="false" />
+          <Property Name="Id_cuenta" Type="Int32" />
+          <Property Name="Numero_tarjeta" Type="Int32" />
+          <Property Name="Fecha_vencimiento" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="cvc" Type="Int32" />
+          <Property Name="saldo_maximo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="Id_Usuario" />
+          </Key>
+          <Property Name="Id_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombres" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Cedula" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Nacimiento" Type="DateTime" Precision="0" />
+          <Property Name="Id_cuenta" Type="Int32" />
+          <Property Name="Id_tarjeta" Type="Int32" />
+          <Property Name="Id_credito" Type="Int32" />
+          <Property Name="Id_prestamo" Type="Int32" />
+          <Property Name="usuario1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="clave" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Codigo_Confirmacion" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Confirmado" Type="Byte" />
+        </EntityType>
+        <EntityContainer Name="BancoAPIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="administradors" EntityType="Self.administrador" />
+          <EntitySet Name="creditoes" EntityType="Self.credito" />
+          <EntitySet Name="cuentas" EntityType="Self.cuenta" />
+          <EntitySet Name="prestamoes" EntityType="Self.prestamo" />
+          <EntitySet Name="tarjetas" EntityType="Self.tarjeta" />
+          <EntitySet Name="usuarios" EntityType="Self.usuario" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BancoAPIModelStoreContainer" CdmEntityContainer="BancoAPIEntities">
+          <EntitySetMapping Name="administradors">
+            <EntityTypeMapping TypeName="BancoAPIModel.administrador">
+              <MappingFragment StoreEntitySet="administrador">
+                <ScalarProperty Name="Id_admin" ColumnName="Id_admin" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="Codigo_confirmacion" ColumnName="Codigo_confirmacion" />
+                <ScalarProperty Name="Confirmado" ColumnName="Confirmado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="creditoes">
+            <EntityTypeMapping TypeName="BancoAPIModel.credito">
+              <MappingFragment StoreEntitySet="credito">
+                <ScalarProperty Name="Id_tarjeta" ColumnName="Id_tarjeta" />
+                <ScalarProperty Name="Numero_tarjeta" ColumnName="Numero_tarjeta" />
+                <ScalarProperty Name="Fecha_vencimiento" ColumnName="Fecha_vencimiento" />
+                <ScalarProperty Name="cvc" ColumnName="cvc" />
+                <ScalarProperty Name="saldo" ColumnName="saldo" />
+                <ScalarProperty Name="deuda" ColumnName="deuda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cuentas">
+            <EntityTypeMapping TypeName="BancoAPIModel.cuenta">
+              <MappingFragment StoreEntitySet="cuentas">
+                <ScalarProperty Name="Numero_cuenta" ColumnName="Numero_cuenta" />
+                <ScalarProperty Name="Saldo_disp" ColumnName="Saldo_disp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prestamoes">
+            <EntityTypeMapping TypeName="BancoAPIModel.prestamo">
+              <MappingFragment StoreEntitySet="prestamo">
+                <ScalarProperty Name="Id_prestamo" ColumnName="Id_prestamo" />
+                <ScalarProperty Name="Saldo_prestado" ColumnName="Saldo_prestado" />
+                <ScalarProperty Name="Saldo_pagado" ColumnName="Saldo_pagado" />
+                <ScalarProperty Name="cuotas" ColumnName="cuotas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tarjetas">
+            <EntityTypeMapping TypeName="BancoAPIModel.tarjeta">
+              <MappingFragment StoreEntitySet="tarjeta">
+                <ScalarProperty Name="Id_tarjeta" ColumnName="Id_tarjeta" />
+                <ScalarProperty Name="Id_cuenta" ColumnName="Id_cuenta" />
+                <ScalarProperty Name="Numero_tarjeta" ColumnName="Numero_tarjeta" />
+                <ScalarProperty Name="Fecha_vencimiento" ColumnName="Fecha_vencimiento" />
+                <ScalarProperty Name="cvc" ColumnName="cvc" />
+                <ScalarProperty Name="saldo_maximo" ColumnName="saldo_maximo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="BancoAPIModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+                <ScalarProperty Name="Id_cuenta" ColumnName="Id_cuenta" />
+                <ScalarProperty Name="Id_tarjeta" ColumnName="Id_tarjeta" />
+                <ScalarProperty Name="Id_credito" ColumnName="Id_credito" />
+                <ScalarProperty Name="Id_prestamo" ColumnName="Id_prestamo" />
+                <ScalarProperty Name="usuario1" ColumnName="usuario" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Codigo_Confirmacion" ColumnName="Codigo_Confirmacion" />
+                <ScalarProperty Name="Confirmado" ColumnName="Confirmado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
